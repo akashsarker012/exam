@@ -1,12 +1,12 @@
 import React from 'react'
 import Container from './container'
-import Button from './Button'
+import Button from './utils/Button'
 
 export default function Navbar() {
   return (
 
 <div className=" text-gray-100 text-[15px]">
-  <div className="relative lg:min-h-screen 2xl:min-h-[730px] before:absolute before:inset-0 before:w-full before:opacity-60" style={{backgroundImage: 'url(https://i.ibb.co/0yxqj6b/banner.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+  <div className="relative h-screen" style={{backgroundImage: 'url(https://i.ibb.co/0yxqj6b/banner.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
    <Container>
    <header className="py-4 px-4  sm:px-10 z-50 min-h-[70px] relative">
       <div className="lg:flex lg:items-center gap-x-2 relative">

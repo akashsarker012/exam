@@ -6,6 +6,8 @@ import Footer from './components/Footer'
 import Pricing from './components/Pricing'
 import Navbar from './components/Navbar'
 import InfoPart from './components/InfoPart'
+import FavoriteApps from './components/FavoriteApps'
+import FeatureSection from './components/FeatureSection';
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
     <>
     <Navbar/>
     <InfoPart/>
+    <FeatureSection/>
+    <FavoriteApps/>
     <Pricing/>
      <Footer/>
     </>
