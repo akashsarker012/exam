@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import InfoPart from './components/InfoPart'
 import FavoriteApps from './components/FavoriteApps'
 import FeatureSection from './components/FeatureSection';
+import Services from './components/Services'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     <InfoPart/>
     <FeatureSection/>
     <FavoriteApps/>
+    <Services/>
     <Pricing/>
      <Footer/>
     </>
