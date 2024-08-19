@@ -51,8 +51,6 @@ export default function Footer() {
       links: "Subscribe to our newsletter and get many interesting things every week"
     }
   ];
-
-  // Preprocess footerData to ensure links is always an array
   footerData = footerData.map(item => ({
     ...item,
     links: typeof item.links === 'string' ? [item.links] : item.links

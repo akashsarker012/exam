@@ -9,6 +9,9 @@ import InfoPart from './components/InfoPart'
 import FavoriteApps from './components/FavoriteApps'
 import FeatureSection from './components/FeatureSection';
 import Services from './components/Services'
+import Talking from './components/Talking'
+import TrustedCustomers from './components/TrustedCustomers'
+import ContactUs from './components/ContactUs'
 
 function App() {
 
@@ -19,7 +22,10 @@ function App() {
     <FeatureSection/>
     <FavoriteApps/>
     <Services/>
+    <TrustedCustomers/>
     <Pricing/>
+    <Talking/>
+<ContactUs/>
      <Footer/>
     </>
   )
