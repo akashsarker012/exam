@@ -1,10 +1,9 @@
-
 import React from 'react';
 import Container from './container';
 import Button from './utils/Button';
 import Heading from './utils/Heading';
 import CardTitle from './utils/CardTitle';
-import Paragraph from './utils/paragraph';
+import Paragraph from './utils/Paragraph';
 import SwitchButton from './utils/SwitchButton';
 
 const Pricing = () => {
@@ -62,45 +61,42 @@ const Pricing = () => {
   };
 
   return (
-    <div className='pt-[140px] pb-40' >
+    <div className='pt-[140px] pb-40'>
       <Container>
-        <Heading className={"w-[650px] flex justify-center text-center mx-auto"} text="Pricing Designed To Fit Your Business" />
-        <div className='flex justify-center items-center gap-8 mx-auto pt-8 pb-16'>
-        <CardTitle text={'Monthly'}/>
-        <SwitchButton/>
-        <CardTitle className={'text-[#645E76]'} text={'Yearly'}/>
+        <Heading className="w-full text-center mx-auto mb-8" text="Pricing Designed To Fit Your Business" />
+        <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mx-auto mb-16'>
+          <CardTitle text={'Monthly'} />
+          <SwitchButton />
+          <CardTitle className='text-[#645E76]' text={'Yearly'} />
         </div>
-      <div className=" flex justify-center items-center gap-8 mx-auto">
-        {pricingData.plans.map((plan, index) => (
-          <div
-            key={index}
-            className={`py-10 px-16 w-1/3 rounded-lg shadow-lg text-center`} >
-              <div className='flex justify-center items-center h-[90px] w-[90px] mx-auto mb-8 bg-[#ECE8F9] rounded-full'>
-                <img src={plan.img} alt={plan.name} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+          {pricingData.plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`py-6 px-8 rounded-lg shadow-lg text-center ${plan.highlight ? 'bg-[#F4EBFF] border-2 border-secondary' : ''}`}
+            >
+              <div className='flex justify-center items-center h-[80px] w-[80px] mx-auto mb-6 bg-[#ECE8F9] rounded-full'>
+                <img src={plan.img} alt={plan.name} className='w-16 h-16' />
               </div>
-              <CardTitle text={plan.name}/>
-            <div>
-              <Heading text={`${plan.price} /${plan.billingCycle}`}/>
-              <div className='mt-3' >
-              <Paragraph text={`Annual pricing ${plan.discountInfo}`}/>
+              <CardTitle text={plan.name} />
+              <Heading text={`${plan.price} /${plan.billingCycle}`} />
+              <div className='mt-3'>
+                <Paragraph text={`Annual pricing ${plan.discountInfo}`} />
               </div>
+              <ul className="text-left py-6">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="mb-2 flex items-center gap-4">
+                    <span className="text-secondary rounded-full bg-[#F4EBFF] h-6 w-6 flex justify-center items-center">✔️</span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button text={plan.buttonText} className="w-full bg-secondary text-white" />
             </div>
-           
-            <ul className="text-left py-10">
-              {plan.features.map((feature, i) => (
-                <li key={i} className="mb-2 flex items-center gap-6">
-                 <span className="text-secondary rounded-full bg-[#F4EBFF] h-8 w-8 flex justify-center items-center">✔️</span> {feature}</li>
-              ))}
-            </ul>
-           <Button text={plan.buttonText} className="w-full bg-secondary text-white"/>
-          </div>
-        ))}
-      </div>
-
+          ))}
+        </div>
       </Container>
     </div>
   );
 };
 
 export default Pricing;
-
